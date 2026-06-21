@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+  <title>Poçtagram</title>
+  <link rel="stylesheet" href="poctagram.css"/>
+</head>
+<body>
+
+<!-- ═══════════════ SPLASH / LOADING ═══════════════ -->
+<div id="screen-splash">
+  <div class="splash-logo">
+    <svg viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="32" r="32" fill="#075E54"/>
+      <path d="M32 10C20.95 10 12 18.95 12 30C12 33.8 13.08 37.34 14.95 40.34L12 52L23.95 49.12C26.82 50.67 30.3 51.6 34 51.6C45.05 51.6 54 42.65 54 31.6C54 20.55 45.05 10 32 10Z" fill="#25D366"/>
+      <path d="M44 38.2C43.5 39.5 41.8 40.6 40.3 40.9C39.3 41.1 37.9 41.3 33.2 39.4C27.2 36.9 23.3 30.8 23 30.4C22.7 30 20.6 27.2 20.6 24.3C20.6 21.4 22.1 20 22.7 19.3C23.3 18.6 24 18.5 24.4 18.5C24.8 18.5 25.2 18.5 25.5 18.5C25.9 18.5 26.4 18.4 26.9 19.5C27.4 20.6 28.6 23.5 28.7 23.7C28.9 23.9 29 24.2 28.8 24.5C28.6 24.8 28.5 25 28.3 25.2C28.1 25.4 27.8 25.7 27.6 25.9C27.4 26.1 27.2 26.4 27.4 26.8C27.6 27.2 28.6 28.8 30 30C31.8 31.6 33.3 32.1 33.7 32.3C34.1 32.5 34.4 32.5 34.6 32.2C34.8 31.9 35.8 30.8 36.1 30.4C36.4 30 36.7 30.1 37.1 30.2C37.5 30.3 40.4 31.7 40.8 31.9C41.2 32.1 41.5 32.2 41.6 32.4C41.7 32.7 41.7 34 41.1 35.5C40.5 37 37.3 38.6 36.4 38.7C35.5 38.8 34.7 39.1 31.2 37.8C26.3 36 23.2 31 22.9 30.6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <h1>Poçtagram</h1>
+  </div>
+  <div class="splash-boxes">
+    <div class="splash-box"></div>
+    <div class="splash-box"></div>
+    <div class="splash-box"></div>
+    <div class="splash-box"></div>
+    <div class="splash-box"></div>
+    <div class="splash-box"></div>
+    <div class="splash-box"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ AUTH ═══════════════ -->
+<div class="screen active" id="screen-auth">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <svg viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="32" fill="#075E54"/>
+        <path d="M32 10C20.95 10 12 18.95 12 30C12 33.8 13.08 37.34 14.95 40.34L12 52L23.95 49.12C26.82 50.67 30.3 51.6 34 51.6C45.05 51.6 54 42.65 54 31.6C54 20.55 45.05 10 32 10Z" fill="#25D366"/>
+        <path d="M44 38.2C43.5 39.5 41.8 40.6 40.3 40.9C39.3 41.1 37.9 41.3 33.2 39.4C27.2 36.9 23.3 30.8 23 30.4C22.7 30 20.6 27.2 20.6 24.3C20.6 21.4 22.1 20 22.7 19.3C23.3 18.6 24 18.5 24.4 18.5C24.8 18.5 25.2 18.5 25.5 18.5C25.9 18.5 26.4 18.4 26.9 19.5C27.4 20.6 28.6 23.5 28.7 23.7C28.9 23.9 29 24.2 28.8 24.5C28.6 24.8 28.5 25 28.3 25.2C28.1 25.4 27.8 25.7 27.6 25.9C27.4 26.1 27.2 26.4 27.4 26.8C27.6 27.2 28.6 28.8 30 30C31.8 31.6 33.3 32.1 33.7 32.3C34.1 32.5 34.4 32.5 34.6 32.2C34.8 31.9 35.8 30.8 36.1 30.4C36.4 30 36.7 30.1 37.1 30.2C37.5 30.3 40.4 31.7 40.8 31.9C41.2 32.1 41.5 32.2 41.6 32.4C41.7 32.7 41.7 34 41.1 35.5C40.5 37 37.3 38.6 36.4 38.7C35.5 38.8 34.7 39.1 31.2 37.8C26.3 36 23.2 31 22.9 30.6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <h1>Poçtagram</h1>
+      <p id="auth-tagline">Hızlı ve güvenli mesajlaşma</p>
+    </div>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('tr')">🇹🇷 Türkçe</button>
+      <button class="lang-btn" onclick="setLang('tk')">🇹🇲 Türkmençe</button>
+    </div>
+    <div class="tab-row">
+      <button class="tab-btn active" id="tab-login" onclick="switchTab('login')" data-i="login_tab">Giriş Yap</button>
+      <button class="tab-btn" id="tab-register" onclick="switchTab('register')" data-i="register_tab">Kayıt Ol</button>
+    </div>
+    <div id="form-login">
+      <div class="form-group"><label data-i="email">E-posta</label><input type="email" id="login-email" placeholder="ornek@mail.com"/></div>
+      <div class="form-group"><label data-i="password">Şifre</label><input type="password" id="login-pass" placeholder="••••••••"/></div>
+      <button class="btn-primary" id="btn-login" onclick="handleLogin()" data-i="login_btn">Giriş Yap</button>
+    </div>
+    <div id="form-register" style="display:none">
+      <div class="form-group"><label data-i="name">İsim</label><input type="text" id="reg-name" placeholder="Adın Soyadın"/></div>
+      <div class="form-group"><label data-i="email">E-posta</label><input type="email" id="reg-email" placeholder="ornek@mail.com"/></div>
+      <div class="form-group"><label data-i="password">Şifre</label><input type="password" id="reg-pass" placeholder="••••••••"/></div>
+      <button class="btn-primary" id="btn-register" onclick="handleRegister()" data-i="register_btn">Kayıt Ol</button>
+    </div>
+    <div class="auth-msg" id="auth-msg"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ APP ═══════════════ -->
+<div class="screen" id="screen-app">
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-wrap">
+        <h2>Poçtagram</h2>
+        <div class="logo-mail-badge" title="Mesajlar">
+          <svg width="12" height="12" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" onclick="openShareLinkPanel()" title="Mesaj Linki Paylaş">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 3.9M15.4 6.6L8.6 10.5"/></svg>
+        </button>
+        <button class="icon-btn" id="requests-btn" onclick="openRequests()" title="Takip İstekleri" style="position:relative">
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <span id="req-badge-dot" class="req-badge-dot" style="display:none"></span>
+        </button>
+        <button class="icon-btn" onclick="openProfile()" title="Profil">
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sekmeler -->
+    <div class="sidebar-tabs" id="sidebar-tabs">
+      <button class="sidebar-tab active" id="stab-chats" onclick="switchSideTab('chats')" data-i="tab_chats">SOHBETLER</button>
+      <button class="sidebar-tab" id="stab-feed" onclick="switchSideTab('feed')" data-i="tab_feed">AKIŞ</button>
+    </div>
+
+    <!-- Sohbetler -->
+    <div id="tab-chats">
+      <div class="search-box">
+        <div class="search-wrap">
+          <svg width="16" height="16" fill="none" stroke="#667781" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="search-input" oninput="handleSearch()" data-i-placeholder="search_placeholder" placeholder="İsimle kullanıcı ara..."/>
+        </div>
+      </div>
+      <div class="contacts-list" id="contacts-list">
+        <div class="empty-state">
+          <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <p data-i="empty_search">Arama yaparak kullanıcı bulabilirsiniz</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Akış -->
+    <div id="tab-feed">
+      <div class="feed-header">
+        <h3 data-i="stories_title">Hikayeler</h3>
+        <div class="stories-row" id="stories-row">
+          <div class="story-item" onclick="openPostModal('story')">
+            <div class="story-add">
+              <svg width="22" height="22" fill="none" stroke="#667781" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </div>
+            <span class="story-name" data-i="add_story">Ekle</span>
+          </div>
+        </div>
+      </div>
+      <div class="feed-list" id="feed-list">
+        <div class="empty-state" style="margin-top:20px">
+          <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <p data-i="empty_feed">Henüz paylaşım yok</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Alanı -->
+  <div id="chat-area">
+    <div id="no-chat">
+      <svg fill="none" stroke="currentColor" stroke-width="1" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <h3>Poçtagram Web</h3>
+      <p data-i="no_chat_hint">Mesajlaşmak için bir kullanıcı seçin</p>
+    </div>
+    <div id="active-chat" style="display:none">
+      <div class="chat-header">
+        <button class="back-btn" onclick="closeChatMobile()">
+          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        </button>
+        <div class="avatar avatar-sm" id="chat-header-avatar" onclick="openUserProfile(activeContact && activeContact.id)"></div>
+        <div class="chat-header-info" onclick="openUserProfile(activeContact && activeContact.id)">
+          <h3 id="chat-header-name"></h3>
+          <span id="chat-header-status"></span>
+        </div>
+      </div>
+      <div class="messages-wrap" id="messages-wrap"></div>
+      <div class="mic-status-pill" id="chat-mic-pill" onclick="openMicPermissionModal()">
+        🎙️ <span data-i="mic_blocked_hint">Sesli mesaj göndermek için dokun ve izin ver</span>
+      </div>
+      <div id="sticker-panel">
+        <div class="sticker-tabs" id="sticker-tabs"></div>
+        <div class="sticker-grid" id="sticker-grid"></div>
+      </div>
+      <div class="chat-input-row" id="chat-input-row">
+        <button class="sticker-btn" id="sticker-toggle-btn" onclick="toggleStickerPanel()" title="Çıkartmalar">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/></svg>
+        </button>
+        <textarea class="msg-input" id="msg-input" rows="1" onkeydown="handleInputKey(event)" oninput="autoResize(this)" data-i-placeholder="msg_placeholder" placeholder="Mesaj yaz..."></textarea>
+
+        <div class="recording-bar" id="recording-bar">
+          <span class="rec-dot"></span>
+          <span class="rec-time" id="rec-time">0:00</span>
+          <div class="rec-wave" id="rec-wave"></div>
+          <button class="rec-cancel-btn" onclick="cancelRecording()" data-i="cancel">İptal</button>
+        </div>
+
+        <div class="voice-preview-bar" id="voice-preview-bar">
+          <button class="voice-preview-play" onclick="toggleVoicePreviewPlay()">
+            <svg id="voice-preview-play-icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <span class="voice-preview-time" id="voice-preview-time">0:00</span>
+          <button class="voice-preview-discard" onclick="discardVoiceRecording()">🗑️</button>
+          <button class="send-btn" style="width:36px;height:36px;min-width:36px" onclick="sendVoiceMessage()">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </div>
+
+        <button class="voice-btn" id="voice-record-btn" onclick="toggleVoiceRecording()" title="Sesli Mesaj">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg>
+        </button>
+        <button class="send-btn" id="send-btn" onclick="sendMessage()">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Post Oluştur Butonu -->
+<button class="create-post-btn" id="create-post-btn" onclick="openPostModal('text')">+</button>
+
+<!-- Post Modal -->
+<div id="post-modal" onclick="closePostModalOutside(event)">
+  <div class="post-modal-card">
+    <h3 data-i="new_post">Yeni Paylaşım</h3>
+    <div class="post-type-row">
+      <button class="post-type-btn active" id="ptype-text" onclick="setPostType('text')" data-i="ptype_text">✏️ Yazı</button>
+      <button class="post-type-btn" id="ptype-link" onclick="setPostType('link')" data-i="ptype_link">🔗 Link</button>
+      <button class="post-type-btn" id="ptype-voice" onclick="setPostType('voice')" data-i="ptype_voice">🎤 Ses</button>
+      <button class="post-type-btn" id="ptype-story" onclick="setPostType('story')" data-i="ptype_story">🌟 Hikaye</button>
+    </div>
+    <textarea id="post-text-input" data-i-placeholder="post_text_ph" placeholder="Ne düşünüyorsun?"></textarea>
+    <input type="text" id="post-link-input" style="display:none" placeholder="https://..." />
+
+    <div id="post-voice-wrap" style="display:none;margin-bottom:10px">
+      <div class="mic-status-pill" id="post-mic-pill" onclick="openMicPermissionModal()" style="margin:0 0 8px">
+        🎙️ <span data-i="mic_blocked_hint">Sesli mesaj göndermek için dokun ve izin ver</span>
+      </div>
+      <div id="post-voice-idle" style="display:flex;align-items:center;justify-content:center;gap:12px;padding:18px;background:var(--gray-light);border-radius:12px">
+        <button class="voice-btn" id="post-voice-record-btn" style="width:54px;height:54px;background:var(--teal-mid);color:#fff" onclick="togglePostVoiceRecording()">
+          <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg>
+        </button>
+        <span style="font-size:13px;color:var(--gray-dark)" data-i="tap_to_record">Kaydetmek için dokun</span>
+      </div>
+      <div id="post-voice-recording" style="display:none;align-items:center;gap:10px;padding:14px;background:var(--gray-light);border-radius:12px">
+        <span class="rec-dot"></span>
+        <span class="rec-time" id="post-rec-time">0:00</span>
+        <div class="rec-wave" id="post-rec-wave" style="flex:1"></div>
+        <button class="rec-cancel-btn" onclick="cancelPostRecording()" data-i="stop">Durdur</button>
+      </div>
+      <div id="post-voice-preview" style="display:none;align-items:center;gap:10px;padding:12px;background:var(--gray-light);border-radius:12px">
+        <button class="voice-preview-play" onclick="togglePostVoicePreviewPlay()">
+          <svg id="post-voice-preview-play-icon" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <span class="voice-preview-time" id="post-voice-preview-time">0:00</span>
+        <button class="voice-preview-discard" onclick="discardPostVoiceRecording()">🗑️</button>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closePostModal()" data-i="cancel">İptal</button>
+      <button class="btn-share" onclick="submitPost()" data-i="share">Paylaş</button>
+    </div>
+  </div>
+</div>
+
+<!-- Story Viewer -->
+<div id="story-viewer">
+  <div class="story-progress" id="story-progress"></div>
+  <div class="story-top">
+    <div class="avatar avatar-sm" id="story-avatar"></div>
+    <span class="story-top-name" id="story-author-name"></span>
+    <span class="story-top-time" id="story-time"></span>
+    <button class="story-close" onclick="closeStory()">✕</button>
+  </div>
+  <div class="story-content"><div class="story-text" id="story-text"></div></div>
+  <div class="story-nav story-nav-left" onclick="prevStory()"></div>
+  <div class="story-nav story-nav-right" onclick="nextStory()"></div>
+</div>
+
+<!-- Profile Panel (kendi profilim) -->
+<div id="profile-panel" onclick="closeProfileOutside(event)">
+  <div class="profile-card">
+    <button class="close-panel icon-btn" onclick="closeProfile()">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <h3 data-i="my_profile">Profilim</h3>
+    <div class="profile-row">
+      <div class="profile-avatar" id="profile-avatar-big"></div>
+      <div class="profile-details"><h4 id="profile-name-big"></h4><p id="profile-email-big"></p></div>
+    </div>
+    <div class="bio-edit-wrap">
+      <label data-i="bio_label">Hakkımda</label>
+      <textarea id="profile-bio-input" maxlength="150" data-i-placeholder="bio_placeholder" placeholder="Kendinden bahset..."></textarea>
+      <button class="btn-save-bio" onclick="saveBio()" data-i="save_bio">Kaydet</button>
+    </div>
+    <div class="pmusic-edit-wrap">
+      <label data-i="pmusic_label">Profil Müziği</label>
+      <div class="pmusic-source-tabs">
+        <button class="pmusic-source-tab active" id="pmusic-tab-link" onclick="setPMusicSource('link')" data-i="pmusic_tab_link">🔗 Link</button>
+        <button class="pmusic-source-tab" id="pmusic-tab-upload" onclick="setPMusicSource('upload')" data-i="pmusic_tab_upload">📁 Dosya Yükle</button>
+      </div>
+      <div id="pmusic-link-area">
+        <input type="text" id="profile-music-input" data-i-placeholder="pmusic_placeholder" placeholder="https://... (mp3 linki veya YouTube linki)"/>
+        <p class="pmusic-edit-hint" data-i="pmusic_hint">Profilini ziyaret eden kişi sayfayı açtığında bu müzik otomatik çalmaya başlar.</p>
+      </div>
+      <div id="pmusic-upload-area" style="display:none">
+        <div class="pmusic-upload-zone" id="pmusic-upload-zone" onclick="document.getElementById('pmusic-file-input').click()">
+          <svg fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" style="margin:0 auto"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+          <p data-i="pmusic_upload_hint">Cihazından bir mp3 dosyası seç (en fazla 30 saniye)</p>
+        </div>
+        <input type="file" id="pmusic-file-input" accept="audio/mp3,audio/mpeg,audio/wav,audio/ogg,audio/m4a,audio/aac,.mp3,.wav,.ogg,.m4a,.aac" style="display:none" onchange="handlePMusicFileSelect(event)"/>
+        <div class="pmusic-upload-file-info" id="pmusic-upload-file-info">
+          <span id="pmusic-upload-filename">—</span>
+          <div class="pmusic-upload-progress"><div class="pmusic-upload-progress-fill" id="pmusic-upload-progress-fill"></div></div>
+          <button class="pmusic-upload-remove" onclick="removePMusicUpload()">✕</button>
+        </div>
+        <p class="pmusic-edit-hint" data-i="pmusic_upload_size_hint">Dosya, sunucu yerine bu uygulamanın veritabanında küçük boyutlu olarak saklanır; bu yüzden kısa tutman gerekiyor.</p>
+      </div>
+      <div class="pmusic-edit-row">
+        <button class="btn-save-pmusic" onclick="savePMusic()" data-i="save_pmusic">Kaydet</button>
+        <button class="btn-clear-pmusic" onclick="clearPMusic()" data-i="clear_pmusic">Kaldır</button>
+      </div>
+    </div>
+    <button class="btn-save-bio" style="background:var(--teal-dark);margin-top:10px" onclick="openShareProfilePanel(currentUser&&currentUser.id)">📤 <span data-i="share_my_profile">Profilimi Paylaş</span></button>
+    <button class="btn-logout" onclick="handleLogout()" data-i="logout">Çıkış Yap</button>
+  </div>
+</div>
+
+<!-- Kullanıcı Profil Sayfası (Instagram tarzı) -->
+<div id="user-profile-screen">
+  <div class="uprofile-header">
+    <button class="uprofile-back" onclick="closeUserProfile()">
+      <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h3 id="uprofile-header-name">Profil</h3>
+  </div>
+  <div class="uprofile-body">
+    <div class="uprofile-top">
+      <div class="uprofile-avatar" id="uprofile-avatar"></div>
+      <div class="uprofile-name" id="uprofile-name"></div>
+      <div class="uprofile-bio" id="uprofile-bio"></div>
+      <div class="uprofile-music-bar" id="uprofile-music-bar">
+        <div class="uprofile-music-icon" id="uprofile-music-icon">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm12-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+        </div>
+        <div class="uprofile-music-info">
+          <div class="uprofile-music-label" data-i="now_playing">Şimdi Çalıyor</div>
+          <div class="uprofile-music-title" id="uprofile-music-title">—</div>
+        </div>
+        <button class="uprofile-music-toggle" id="uprofile-music-toggle" onclick="toggleProfileMusic()">
+          <svg id="uprofile-music-toggle-icon" width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+      </div>
+      <div class="uprofile-music-tap-hint" id="uprofile-music-tap-hint" onclick="manualStartProfileMusic()">
+        🔊 <span data-i="tap_to_play_music">Müziği çalmak için dokun</span>
+      </div>
+      <div class="uprofile-stats">
+        <div class="uprofile-stat"><b id="uprofile-followers-count">0</b><span data-i="followers">Takipçi</span></div>
+        <div class="uprofile-stat"><b id="uprofile-following-count">0</b><span data-i="following">Takip</span></div>
+      </div>
+      <div class="uprofile-actions" id="uprofile-actions"></div>
+      <button class="btn-follow message" style="margin-top:10px;max-width:320px;width:100%" onclick="openShareProfilePanel(viewingProfileUid)">📤 <span data-i="share_profile">Profili Paylaş</span></button>
+    </div>
+  </div>
+</div>
+<div id="uprofile-music-yt-frame"></div>
+
+<!-- Takip İstekleri Paneli -->
+<div id="requests-panel" onclick="closeRequestsOutside(event)">
+  <div class="requests-card">
+    <h3 data-i="requests_title">Takip İstekleri</h3>
+    <div class="requests-list" id="requests-list"></div>
+  </div>
+</div>
+
+<!-- Paylaşım Paneli (Profil Linki / Mesaj Linki) -->
+<div id="share-panel" onclick="closeShareOutside(event)">
+  <div class="share-card">
+    <h3 id="share-panel-title">Paylaş</h3>
+    <p class="share-desc" id="share-panel-desc"></p>
+    <div class="share-link-box">
+      <input type="text" id="share-link-input" readonly/>
+      <button class="share-copy-btn" id="share-copy-btn" onclick="copyShareLink()" data-i="copy">Kopyala</button>
+    </div>
+    <div class="share-options">
+      <button class="share-opt-btn" onclick="shareVia('whatsapp')">
+        <svg fill="#25D366" viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.27a8.93 8.93 0 0 0 4.36 1.11h.01a8.94 8.94 0 0 0 8.93-8.93 8.87 8.87 0 0 0-2.4-6.59zm-5.55 13.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.96.94-2.73-.18-.28a7.43 7.43 0 1 1 13.85-3.83 7.45 7.45 0 0 1-7.76 7.08z"/></svg>
+        <span>WhatsApp</span>
+      </button>
+      <button class="share-opt-btn" onclick="shareVia('telegram')">
+        <svg fill="#229ED9" viewBox="0 0 24 24"><path d="M22 4.01L2.5 11.5c-1.2.47-1.2 1.13-.22 1.42l5 1.56 1.9 5.96c.24.6.49.84 1 .84.5 0 .73-.23 1-.5l2.4-2.32 5 3.7c.92.5 1.58.25 1.82-.85l3.3-15.6c.36-1.36-.5-1.97-1.7-1.7z"/></svg>
+        <span>Telegram</span>
+      </button>
+      <button class="share-opt-btn" onclick="shareVia('native')">
+        <svg fill="none" stroke="var(--teal-mid)" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 3.9M15.4 6.6L8.6 10.5"/></svg>
+        <span data-i="more">Diğer</span>
+      </button>
+    </div>
+    <button class="btn-close-share" onclick="closeSharePanel()" data-i="close">Kapat</button>
+  </div>
+</div>
+
+<!-- Mikrofon İzni Modalı -->
+<div id="mic-permission-modal">
+  <div class="mic-perm-card">
+    <div class="mic-perm-icon">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4"/></svg>
+    </div>
+    <h3 data-i="mic_perm_title">Mikrofon İzni</h3>
+    <p data-i="mic_perm_desc">Sesli mesaj ve sesli paylaşım gönderebilmek için mikrofonuna erişim izni vermen gerekiyor.</p>
+    <div class="mic-perm-actions">
+      <button class="btn-mic-allow" id="btn-mic-allow" onclick="requestMicPermission()" data-i="mic_perm_allow">🎙️ İzin Ver</button>
+      <button class="btn-mic-later" onclick="closeMicPermissionModal()" data-i="mic_perm_later">Daha Sonra</button>
+    </div>
+    <div class="mic-perm-status" id="mic-perm-status"></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="poctagram.js"></script>
+</body>
+</html>
